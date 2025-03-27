@@ -2,11 +2,11 @@
   "name": "angular-todo",
   "version": "0.0.0",
   "scripts": {
-    "ng": "angular-todo/node_modules/.bin/ng",
-    "start": "angular-todo/node_modules/.bin/ng serve",
-    "build": "angular-todo/node_modules/.bin/ng build",
-    "watch": "angular-todo/node_modules/.bin/ng build --watch --configuration development",
-    "test": "angular-todo/node_modules/.bin/ng test"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -17,6 +17,7 @@
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
+    "ng-zorro-antd": "^19.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

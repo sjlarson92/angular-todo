@@ -1,0 +1,17 @@
+<div>{{message()}}</div>
+<input type="text" placeholder="Your input here..." (keyup)="keyUpHandler($event)"/>
+
+<nz-table [nzData]="listOfData">
+  <thead>
+  <tr>
+    <th>Complete</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of listOfData">
+    <td [nzChecked]="data.isCompleted"></td>
+    <td>{{data.name}}</td>
+  </tr>
+  </tbody>
+</nz-table>
