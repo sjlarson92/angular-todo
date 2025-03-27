@@ -13,11 +13,11 @@ export class CounterComponent {
   countValue = signal(0)
 
   increment = () => {
-    this.countValue.set(this.countValue() + 1)
+    this.countValue.update(val => val + 1)
   }
 
   decrease = () => {
-    this.countValue.set(this.countValue() - 1)
+    this.countValue.update(val => val - 1)
   }
 
   reset = () => {
