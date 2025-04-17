@@ -1,1 +1,5 @@
-<p>task-item works!</p>
+<!--Conditional class rendering depending on if task is completed-->
+<li [ngClass]="{'line-through': task().completed}">
+  <input id="task-{{task().id}}" type="checkbox" [checked]="task().completed"/>
+  <label for="task-{{task().id}}">{{ task().title }}</label>
+</li>

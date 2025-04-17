@@ -1,10 +1,20 @@
-<div>{{message()}}</div>
+<div>{{ message() }}</div>
 <input type="text" placeholder="Your input here..." (keyup)="keyUpHandler($event)"/>
 
-<!--for loop render, track by unique field-->
-@for (task of taskItems(); track task.id) {
-  <p>{{task.title}}</p>
+<h3>Tasks List</h3>
+
+<!--Structural directive-->
+@if (!taskItems().length) {
+  <p>Loading ...</p>
 }
+
+<ul>
+  <!--for loop render using a control flow block (instead of *ngFor)
+  , track by unique field-->
+  @for (task of taskItems(); track task.id) {
+    <app-task-item [task]="task" />
+  }
+</ul>
 
 <!--<nz-table [nzData]="listOfData">-->
 <!--  <thead>-->

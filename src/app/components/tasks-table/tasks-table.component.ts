@@ -3,10 +3,11 @@ import {NzButtonModule} from 'ng-zorro-antd/button';
 import {TasksService} from '../../services/tasks.service';
 import { Task } from '../../model/task.type';
 import {catchError} from 'rxjs';
+import {TaskItemComponent} from '../task-item/task-item.component';
 
 @Component({
   selector: 'app-tasks-table',
-  imports: [NzButtonModule],
+  imports: [NzButtonModule, TaskItemComponent],
   templateUrl: './tasks-table.component.html',
   styleUrl: './tasks-table.component.css'
 })
