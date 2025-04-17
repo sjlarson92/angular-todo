@@ -2,12 +2,6 @@ import {Component, signal} from '@angular/core';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import {CounterComponent} from '../components/counter/counter.component';
 
-export interface Task {
-  id: number;
-  name: string;
-  isCompleted: boolean;
-}
-
 @Component({
   selector: 'app-home',
   imports: [

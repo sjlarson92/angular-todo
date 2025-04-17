@@ -14,3 +14,7 @@
     ng g c dir/component-name
 ```
 6. Add Ng-zorro (Ant Design for Angular) `npm install ng-zorro-antd`
+
+## Angular Services
+- Used to encapsulate data, making HTTP calls, or performing any task that is not related directly to rendering
+- 

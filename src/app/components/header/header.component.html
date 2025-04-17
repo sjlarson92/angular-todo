@@ -1,6 +1,7 @@
 <header>
   <nav>
-    <span routerLink="">{{title()}}</span>
+<!--    routerLink allows user to change routes without reloading entire page-->
+    <button nz-button nzType="default" routerLink="">{{title()}}</button>
       <button nz-button nzType="primary" routerLink="/todos">
         To Do List
       </button>
