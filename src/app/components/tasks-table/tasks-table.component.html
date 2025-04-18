@@ -8,10 +8,17 @@
   <p>Loading ...</p>
 }
 
+<form>
+  <label>Filter Tasks</label>
+  <input name="searchTerm" [(ngModel)]="searchTerm" placeholder="Search tasks..."/>
+</form>
+
+
 <ul>
   <!--for loop render using a control flow block (instead of *ngFor)
   , track by unique field-->
-  @for (task of taskItems(); track task.id) {
+<!--  This is also using the filterTodos pipe to filter tasks by searchTerm-->
+  @for (task of taskItems() | filterTodos : searchTerm(); track task.id) {
     <app-task-item (taskClicked)="updateTask($event)" [task]="task" />
   }
 </ul>

@@ -4,10 +4,12 @@ import {TasksService} from '../../services/tasks.service';
 import {Task} from '../../model/task.type';
 import {catchError} from 'rxjs';
 import {TaskItemComponent} from '../task-item/task-item.component';
+import {FormsModule} from '@angular/forms';
+import {FilterTodosPipe} from '../../pipes/filter-todos.pipe';
 
 @Component({
   selector: 'app-tasks-table',
-  imports: [NzButtonModule, TaskItemComponent],
+  imports: [NzButtonModule, TaskItemComponent, FormsModule, FilterTodosPipe],
   templateUrl: './tasks-table.component.html',
   styleUrl: './tasks-table.component.css'
 })
@@ -18,6 +20,7 @@ export class TasksTableComponent implements OnInit {
   taskService = inject(TasksService)
 
   taskItems = signal<Array<Task>>([])
+  searchTerm = signal('')
 
   ngOnInit() {
     // make api call to get tasks and set tasks to signal in component

@@ -24,3 +24,10 @@
   - Components 
   - Attribute directives (change existing html element, binding click events)
   - Structural directives (remove or add to the DOM, ex: Loading icon that only shows while data loads)
+  - `ng g directive directives/file-name`
+
+## Angular Pipes
+- Used to transform data without use of styling
+- Built in pipes, ex: CurrencyPipe, DataPipe, UpperCasePipe, etc.
+- Custom Pipes
+  - `ng g pipe pipes/file-name `

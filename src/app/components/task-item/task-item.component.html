@@ -6,5 +6,6 @@
     [checked]="task().completed"
     (change)="this.handleTaskClicked()"
   />
-  <label for="task-{{task().id}}">{{ task().title }}</label>
+<!--  Below is using Angular built-in pipe to make the task.title uppercase-->
+  <label for="task-{{task().id}}">{{ task().title | uppercase }}</label>
 </li>
