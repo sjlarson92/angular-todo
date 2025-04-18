@@ -1,7 +1,7 @@
 import {Component, inject, input, OnInit, signal} from '@angular/core';
 import {NzButtonModule} from 'ng-zorro-antd/button';
 import {TasksService} from '../../services/tasks.service';
-import { Task } from '../../model/task.type';
+import {Task} from '../../model/task.type';
 import {catchError} from 'rxjs';
 import {TaskItemComponent} from '../task-item/task-item.component';
 
@@ -13,7 +13,7 @@ import {TaskItemComponent} from '../task-item/task-item.component';
 })
 
 // implements OnInit allows a method to run on init
-export class TasksTableComponent implements OnInit{
+export class TasksTableComponent implements OnInit {
   // inject TaskService to this component
   taskService = inject(TasksService)
 
@@ -28,10 +28,25 @@ export class TasksTableComponent implements OnInit{
           console.log(`Fetching todos had error: ${error}`)
           throw error
         })
-    ).subscribe((tasks) => {
-      this.taskItems.set(tasks)
+      ).subscribe((tasks) => {
+        this.taskItems.set(tasks)
       }
     )
+  }
+
+  updateTask(task: Task) {
+    this.taskItems.update((currentTasks) => {
+      return currentTasks.map(currentTask => {
+        if (currentTask.id === task.id) {
+          return {
+            ...currentTask,
+            completed: !currentTask.completed,
+          }
+        } else {
+          return currentTask
+        }
+      })
+    })
   }
 
   message = input("Default message") // this should receive prop

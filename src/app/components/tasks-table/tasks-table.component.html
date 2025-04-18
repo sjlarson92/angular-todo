@@ -12,7 +12,7 @@
   <!--for loop render using a control flow block (instead of *ngFor)
   , track by unique field-->
   @for (task of taskItems(); track task.id) {
-    <app-task-item [task]="task" />
+    <app-task-item (taskClicked)="updateTask($event)" [task]="task" />
   }
 </ul>
 

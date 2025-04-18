@@ -1,5 +1,10 @@
 <!--Conditional class rendering depending on if task is completed-->
 <li [ngClass]="{'line-through': task().completed}">
-  <input id="task-{{task().id}}" type="checkbox" [checked]="task().completed"/>
+  <input
+    id="task-{{task().id}}"
+    type="checkbox"
+    [checked]="task().completed"
+    (change)="this.handleTaskClicked()"
+  />
   <label for="task-{{task().id}}">{{ task().title }}</label>
 </li>

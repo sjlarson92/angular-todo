@@ -1,5 +1,5 @@
-import {Component, input} from '@angular/core';
-import { Task } from '../../model/task.type';
+import {Component, input, output} from '@angular/core';
+import {Task} from '../../model/task.type';
 import {NgClass} from '@angular/common';
 
 @Component({
@@ -11,5 +11,11 @@ import {NgClass} from '@angular/common';
   styleUrl: './task-item.component.css'
 })
 export class TaskItemComponent {
- task = input.required<Task>()
+  task = input.required<Task>()
+
+  taskClicked = output<Task>()
+
+  handleTaskClicked() {
+    this.taskClicked.emit(this.task())
+  }
 }
